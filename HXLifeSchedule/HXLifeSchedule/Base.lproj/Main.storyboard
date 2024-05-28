@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,11 +674,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="HXLifeSchedule" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-142" y="-422"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -686,32 +687,217 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="241" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="6wT-xb-Wzf" kind="relationship" relationship="window.shadowedContentViewController" id="Qzn-Rt-RQA"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-231" y="74"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="GYL-9J-ZZ2">
+            <objects>
+                <splitViewController id="6wT-xb-Wzf" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="cB7-uz-35C"/>
+                        <splitViewItem id="nFH-nO-Xbe"/>
+                        <splitViewItem id="1ow-gY-z3N"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="mdV-i7-xBC">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="6wT-xb-Wzf" id="Dc1-vW-Dle"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="mdV-i7-xBC" id="gdA-uu-LM3"/>
+                        <segue destination="ukT-gQ-Nrj" kind="relationship" relationship="splitItems" id="yNb-cx-1ix"/>
+                        <segue destination="DD6-Yv-fhO" kind="relationship" relationship="splitItems" id="V3O-Vm-Gim"/>
+                        <segue destination="N30-cJ-sCz" kind="relationship" relationship="splitItems" id="VHh-c3-aUu"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="TXx-yB-rWX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="952"/>
+        </scene>
+        <!--Left View Split Controller-->
+        <scene sceneID="7Zd-9P-KAT">
+            <objects>
+                <splitViewController id="ukT-gQ-Nrj" customClass="HXLeftViewSplitController" customModule="HXLifeSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="69J-JR-5gu"/>
+                        <splitViewItem id="Jup-Xr-RZy"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" id="YMD-Jb-srP">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="ukT-gQ-Nrj" id="QVp-Vr-mY6"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="YMD-Jb-srP" id="aeD-gk-W5O"/>
+                        <segue destination="jin-Qy-a6s" kind="relationship" relationship="splitItems" id="BQJ-0q-i5F"/>
+                        <segue destination="80x-ei-OB0" kind="relationship" relationship="splitItems" id="hIR-nd-bFU"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="LzF-za-Qup" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="49"/>
+        </scene>
+        <!--Left Top View Controller-->
+        <scene sceneID="sn5-Tw-gad">
+            <objects>
+                <viewController id="jin-Qy-a6s" customClass="HXLeftTopViewController" customModule="HXLifeSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4GV-gm-Vbx">
+                        <rect key="frame" x="0.0" y="0.0" width="832" height="401"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwt-Bq-2UP">
+                                <rect key="frame" x="0.0" y="10" width="832" height="190"/>
+                                <subviews>
+                                    <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-hB-TNi">
+                                        <rect key="frame" x="0.0" y="168" width="832" height="22"/>
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" title="搜索" usesSingleLineMode="YES" bezelStyle="round" id="IvR-x2-zyi">
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </searchFieldCell>
+                                    </searchField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-Bc-udJ">
+                                        <rect key="frame" x="-7" y="133" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="我的一天" bezelStyle="rounded" alignment="left" borderStyle="border" inset="2" id="dgq-bw-Yjw">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q4U-HS-8LP">
+                                        <rect key="frame" x="-7" y="105" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="重要" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JhX-La-ob1">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1XU-gI-6Gi">
+                                        <rect key="frame" x="-7" y="77" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="计划内" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hGi-aM-YIP">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6qz-fO-0Ex">
+                                        <rect key="frame" x="-7" y="49" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="已分配给我" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5pS-v9-e9z">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-eJ-uyI">
+                                        <rect key="frame" x="-7" y="21" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="标记的电子邮件" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iMA-20-w20">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiA-PV-b9G">
+                                        <rect key="frame" x="-7" y="-7" width="846" height="32"/>
+                                        <buttonCell key="cell" type="push" title="任务" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z6Q-FB-hsl">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1XU-gI-6Gi" secondAttribute="trailing" id="M89-Dy-fRB"/>
+                                    <constraint firstAttribute="trailing" secondItem="GVR-hB-TNi" secondAttribute="trailing" id="N7c-bo-2WZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6qz-fO-0Ex" secondAttribute="trailing" id="oaL-5B-Yh8"/>
+                                    <constraint firstAttribute="trailing" secondItem="FiA-PV-b9G" secondAttribute="trailing" id="pZq-fC-ITH"/>
+                                    <constraint firstAttribute="trailing" secondItem="l3y-eJ-uyI" secondAttribute="trailing" id="phP-Bo-uq5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q4U-HS-8LP" secondAttribute="trailing" id="sn6-nO-n4h"/>
+                                    <constraint firstAttribute="trailing" secondItem="ObT-Bc-udJ" secondAttribute="trailing" id="xET-Wo-Zdo"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="btAssignedMe" destination="6qz-fO-0Ex" id="eg2-YB-Nh0"/>
+                        <outlet property="btMarkedEmails" destination="l3y-eJ-uyI" id="DM5-gq-c2I"/>
+                        <outlet property="btMyDay" destination="ObT-Bc-udJ" id="xHc-4a-ai7"/>
+                        <outlet property="btPlan" destination="1XU-gI-6Gi" id="ctA-H0-0lQ"/>
+                        <outlet property="btProminence" destination="Q4U-HS-8LP" id="KgA-LI-EaT"/>
+                        <outlet property="btSearch" destination="GVR-hB-TNi" id="hnC-y4-dhm"/>
+                        <outlet property="btTask" destination="FiA-PV-b9G" id="GX5-NK-R9M"/>
+                        <outlet property="viewStack" destination="Dwt-Bq-2UP" id="gbw-ib-oub"/>
+                    </connections>
+                </viewController>
+                <customObject id="JI3-eR-OkM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="-252.5"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="Voz-NK-gxk">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="80x-ei-OB0" sceneMemberID="viewController">
+                    <view key="view" id="fJ1-dN-0Wn">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="180"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="xGA-le-RcW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="1337" y="261"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="24i-d7-vII">
+            <objects>
+                <viewController id="DD6-Yv-fhO" sceneMemberID="viewController">
+                    <view key="view" id="WVT-ZQ-yjT">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="z3S-hJ-Nf3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="554"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eXP-VU-nOr">
+            <objects>
+                <viewController id="N30-cJ-sCz" sceneMemberID="viewController">
+                    <view key="view" id="Mqu-oR-ppK">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Sj9-qc-I3n" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="1197"/>
         </scene>
     </scenes>
 </document>
